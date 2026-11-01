@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helios Equipment Services | Industrial cooling and compressed air</title>
+<meta name="description" content="Helios Equipment Services sells and maintains industrial cooling and compressed-air equipment across Europe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- Edit the support address in ONE place: the Email-to-Case routing address from Salesforce Setup -->
+<body data-support-email="bjitemon@gmail.com">
+
+<header class="site-header has-toggle">
+  <div class="wrap">
+    <a class="brand" href="#top">Helios<span>.</span> Equipment Services</a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <a href="#range">Equipment</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#enquiry">Sales enquiry</a>
+      <a href="#faq">Questions</a>
+      <a href="#email">Email support</a>
+    </nav>
+    <a class="nav-cta" href="#service">Report a fault</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero with interactive cooling circuit -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Cooling and compressed air that keeps running.</h1>
+        <p class="lead">We sell, install and maintain industrial chillers, screw compressors and dryers for businesses across Europe.</p>
+        <div class="actions">
+          <a class="btn" href="#enquiry">Ask for a quote</a>
+          <a class="btn ghost" href="#service">Report a fault</a>
+        </div>
+        <p class="facts">About four hundred business customers and around sixty service engineers, in every region we sell.</p>
+      </div>
+
+      <figure class="sheet" style="margin:0">
+        <svg id="circuit" viewBox="0 0 580 360" role="group" aria-label="Refrigeration circuit with four parts. Select a part to read what it does.">
+          <!-- pipes (hot side after the compressor, cold side after the valve) -->
+          <path class="pipe hot" d="M314 70 H480 V300 H306"/>
+          <path class="pipe cold" d="M254 300 H80 V70 H246"/>
+          <path class="flow hot" d="M314 70 H480 V300 H306"/>
+          <path class="flow cold" d="M254 300 H80 V70 H246"/>
+
+          <!-- heat in / heat out -->
+          <path class="arrow" d="M6 185 H42 M34 177 L42 185 L34 193"/>
+          <text class="circuit-note" x="6" y="170">Heat in</text>
+          <path class="arrow" d="M518 185 H554 M546 177 L554 185 L546 193"/>
+          <text class="circuit-note" x="574" y="170" text-anchor="end">Heat out</text>
+
+          <!-- Compressor -->
+          <g class="node" tabindex="0" role="button" data-title="Compressor" data-text="Squeezes the refrigerant gas to high pressure. It carries the most wear in the circuit, so we track service by operating hours.">
+            <circle class="hit" cx="280" cy="70" r="46"/>
+            <circle class="shape" cx="280" cy="70" r="34"/>
+            <polygon class="shape" points="266,54 266,86 298,70"/>
+          </g>
+          <text class="circuit-label" x="280" y="132">Compressor</text>
+
+          <!-- Condenser -->
+          <g class="node" tabindex="0" role="button" data-title="Condenser" data-text="Releases the heat to air or cooling water and turns the gas back into liquid. Dirty coils are the most common cause of high-pressure trips.">
+            <rect class="hit" x="436" y="116" width="88" height="138"/>
+            <rect class="shape" x="450" y="130" width="60" height="110" rx="6"/>
+            <path class="coil" d="M462 146 H498 V166 H462 V186 H498 V206 H462 V226"/>
+          </g>
+          <text class="circuit-label" x="418" y="190" text-anchor="end">Condenser</text>
+
+          <!-- Expansion valve -->
+          <g class="node" tabindex="0" role="button" data-title="Expansion valve" data-text="Drops the pressure so the liquid refrigerant turns cold. A failing valve shows up as weak cooling while the power draw looks normal.">
+            <circle class="hit" cx="280" cy="300" r="36"/>
+            <polygon class="shape" points="258,286 280,300 258,314"/>
+            <polygon class="shape" points="302,286 280,300 302,314"/>
+          </g>
+          <text class="circuit-label" x="280" y="258">Expansion valve</text>
+
+          <!-- Evaporator -->
+          <g class="node" tabindex="0" role="button" data-title="Evaporator" data-text="Absorbs heat from your process water or air. This is where the cooling you rely on actually happens.">
+            <rect class="hit" x="56" y="116" width="88" height="138"/>
+            <rect class="shape" x="50" y="130" width="60" height="110" rx="6"/>
+            <path class="coil" d="M62 146 H98 V166 H62 V186 H98 V206 H62 V226"/>
+          </g>
+          <text class="circuit-label" x="142" y="190" text-anchor="start">Evaporator</text>
+        </svg>
+        <figcaption class="caption" aria-live="polite">
+          <h3 id="circuitTitle">How a cooling circuit works</h3>
+          <p id="circuitText">Select a part of the circuit to see what it does and what we service.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Equipment range -->
+  <section class="range" id="range">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we sell and look after</h2>
+        <p>Three product families, each supplied, installed and serviced by the same regional team.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Equipment families">
+        <button role="tab" id="tab-chillers" aria-selected="true" aria-controls="panel-chillers">Chillers</button>
+        <button role="tab" id="tab-compressors" aria-selected="false" aria-controls="panel-compressors" tabindex="-1">Screw compressors</button>
+        <button role="tab" id="tab-dryers" aria-selected="false" aria-controls="panel-dryers" tabindex="-1">Air dryers</button>
+      </div>
+
+      <div id="productPanels">
+      <div class="tab-panel" id="panel-chillers" role="tabpanel" aria-labelledby="tab-chillers">
+        <div>
+          <p class="lead">Process and plant cooling for cold stores, food production and manufacturing.</p>
+          <p>Air-cooled and water-cooled units, sized to your heat load and installed with the controls your plant already uses.</p>
+          <button class="btn enquire" type="button" data-equipment="Chiller">Enquire about chillers</button>
+        </div>
+        <div>
+          <figure class="product-image"><img src="images/chiller.svg" alt="Illustration of an air-cooled chiller with two fans on top" width="800" height="600" loading="lazy"></figure>
+          <dl class="spec">
+          <dt>Capacity</dt><dd>20 kW to 2 MW</dd>
+          <dt>Cooling medium</dt><dd>Water or glycol</dd>
+          <dt>Heat rejection</dt><dd>Air or water cooled</dd>
+          <dt>Compressors</dt><dd>Fixed or variable speed</dd>
+        </dl>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-compressors" role="tabpanel" aria-labelledby="tab-compressors" hidden>
+        <div>
+          <p class="lead">Compressed air for workshops, packaging lines and process plants.</p>
+          <p>Oil-injected and oil-free screw compressors, with service intervals tracked from the unit record so nothing is missed.</p>
+          <button class="btn enquire" type="button" data-equipment="Screw compressor">Enquire about compressors</button>
+        </div>
+        <div>
+          <figure class="product-image"><img src="images/compressor.svg" alt="Illustration of a screw compressor cabinet next to an air receiver tank" width="800" height="600" loading="lazy"></figure>
+          <dl class="spec">
+          <dt>Motor power</dt><dd>7.5 to 250 kW</dd>
+          <dt>Working pressure</dt><dd>Up to 13 bar</dd>
+          <dt>Drive</dt><dd>Fixed or variable speed</dd>
+          <dt>Oil change</dt><dd>Every 4,000 hours or yearly</dd>
+        </dl>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="panel-dryers" role="tabpanel" aria-labelledby="tab-dryers" hidden>
+        <div>
+          <p class="lead">Dry air that protects tools, product and pipework.</p>
+          <p>Refrigerant dryers for general use and desiccant dryers where a very low dew point matters, sized to your flow.</p>
+          <button class="btn enquire" type="button" data-equipment="Air dryer">Enquire about dryers</button>
+        </div>
+        <div>
+          <figure class="product-image"><img src="images/dryer.svg" alt="Illustration of an air dryer between two filter housings" width="800" height="600" loading="lazy"></figure>
+          <dl class="spec">
+          <dt>Refrigerant dryer</dt><dd>Dew point +3 °C</dd>
+          <dt>Desiccant dryer</dt><dd>Dew point −40 °C</dd>
+          <dt>Flow</dt><dd>0.5 to 80 m³/min</dd>
+          <dt>Filtration</dt><dd>Matched filters included</dd>
+        </dl>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage explainer -->
+  <section class="coverage" id="coverage">
+    <div class="wrap section-split">
+      <div>
+        <h2>Know before we visit</h2>
+        <p>Every unit we have sold has a coverage position. Our engineers check it before they commit to a visit, and we tell you what it means for you.</p>
+      </div>
+      <div>
+        <div class="segment" role="group" aria-label="Coverage position">
+          <button type="button" data-state="covered" aria-pressed="true">Covered</button>
+          <button type="button" data-state="expired" aria-pressed="false">Expired</button>
+          <button type="button" data-state="none" aria-pressed="false">Not covered</button>
+        </div>
+        <div class="status-card" id="statusCard" data-state="covered" aria-live="polite">
+          <h3 id="statusTitle">Covered: the visit is included</h3>
+          <p id="statusText">Your plan is active for this unit. We confirm that before the engineer travels, so there are no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sales enquiry: Web-to-Lead (SAL-01) -->
+  <section class="enquiry" id="enquiry">
+    <div class="wrap section-split">
+      <div>
+        <h2>Tell us what you need to cool or compress</h2>
+        <p>Send the basics and a sales engineer will come back to you. You will get a confirmation email straight away.</p>
+      </div>
+
+      <div class="panel">
+        <form class="form" id="leadForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DjV000006QR4H" method="POST">
+          <input type="hidden" name="oid" value="00DjV000006QR4H">
+          <!-- retURL is set automatically by site.js on a hosted page. Replace this value only if thanks.html lives elsewhere. -->
+          <input type="hidden" name="retURL" id="leadRet" value="https://REPLACE-ME/thanks.html?from=enquiry">
+          <input type="hidden" name="lead_source" value="Web">
+
+          <div class="field">
+            <label for="first_name">First name</label>
+            <input id="first_name" name="first_name" maxlength="40" type="text" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="last_name">Last name *</label>
+            <input id="last_name" name="last_name" maxlength="80" type="text" required autocomplete="family-name">
+          </div>
+          <div class="field">
+            <label for="email">Work email *</label>
+            <input id="email" name="email" maxlength="80" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" maxlength="40" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="company">Company *</label>
+            <input id="company" name="company" maxlength="40" type="text" required autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="country_code">Country</label>
+            <select id="country_code" name="country_code" required>
+              <option value="">Select a country</option>
+              <option value="NL">Netherlands</option>
+              <option value="BE">Belgium</option>
+              <option value="LU">Luxembourg</option>
+              <option value="DE">Germany</option>
+              <option value="AT">Austria</option>
+              <option value="CH">Switzerland</option>
+              <option value="FR">France</option>
+            </select>
+          </div>
+
+          <!-- Custom lead fields (Ids from the Salesforce generator) -->
+          <div class="field">
+            <label for="00NjV00000l33xZ">Equipment type</label>
+            <input id="00NjV00000l33xZ" name="00NjV00000l33xZ" maxlength="50" type="text" list="equipTypes" placeholder="For example, screw compressor">
+            <datalist id="equipTypes">
+              <option value="Chiller">
+              <option value="Screw compressor">
+              <option value="Air dryer">
+              <option value="Cooling tower">
+            </datalist>
+          </div>
+          <div class="field">
+            <label for="00NjV00000l34yT">Site postcode</label>
+            <input id="00NjV00000l34yT" name="00NjV00000l34yT" maxlength="20" type="text" autocomplete="postal-code">
+          </div>
+          <div class="field full">
+            <label for="00NjV00000l38E5">Indicative budget in EUR <span class="hint">A rough figure is fine.</span></label>
+            <input id="00NjV00000l38E5" name="00NjV00000l38E5" type="number" min="0" step="1" inputmode="numeric">
+          </div>
+          <div class="field full">
+            <label for="00NjV00000l38XR">Enquiry details</label>
+            <textarea id="00NjV00000l38XR" name="00NjV00000l38XR" rows="4" wrap="soft" placeholder="For example, we need a 200 kW chiller for a new cold room."></textarea>
+          </div>
+
+          <div class="full">
+            <button class="btn" type="submit">Send enquiry</button>
+          </div>
+          <p class="note full">Fields marked * are required.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <!-- Service request: Web-to-Case (INT-03) -->
+    <section class="service" id="service">
+      <div class="wrap section-split">
+        <div>
+          <h2>Something stopped? Tell us.</h2>
+          <p>Use this form for a fault or an invoice question. You will receive an email with your case number to quote in
+            any follow-up.</p>
+          <ol class="steps">
+            <li>We confirm your request by email with a case number.</li>
+            <li>The case goes to the service queue for your region.</li>
+            <li>A dispatcher assigns an engineer, and we tell you whether the visit is covered.</li>
+          </ol>
+        </div>
+    
+        <div class="panel">
+          <form class="form" id="caseForm"
+            action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DjV000006QR4H"
+            method="POST">
+            <input type="hidden" name="orgid" value="00DjV000006QR4H">
+            <!-- retURL is set automatically by site.js on a hosted page -->
+            <input type="hidden" name="retURL" id="caseRet" value="https://REPLACE-ME/thanks.html?from=service">
+            <input type="hidden" name="origin" value="Web">
+    
+            
+            <div class="field">
+              <label for="name">Your name *</label>
+              <input id="name" name="name" maxlength="80" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="cemail">Email *</label>
+              <input id="cemail" name="email" maxlength="80" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="cphone">Phone</label>
+              <input id="cphone" name="phone" maxlength="40" type="tel" autocomplete="tel">
+            </div>
+    
+            <div class="field full">
+              <span class="legend" id="typeLegend">What is it about? *</span>
+              <div class="choice" role="radiogroup" aria-labelledby="typeLegend">
+                <input type="radio" id="type-technical" name="recordType" value="012jV0000012vKz" required>
+                <label for="type-technical">Technical fault</label>
+                <input type="radio" id="type-billing" name="recordType" value="012jV0000012vRR">
+                <label for="type-billing">Billing question</label>
+              </div>
+            </div>
+    
+            <div class="field full">
+              <span class="legend" id="prioLegend">Urgency</span>
+              <div class="choice" role="radiogroup" aria-labelledby="prioLegend">
+                <input type="radio" id="prio-medium" name="priority" value="Medium" checked>
+                <label for="prio-medium">Normal</label>
+                <input type="radio" id="prio-high" name="priority" value="High">
+                <label for="prio-high">Urgent, equipment is down</label>
+              </div>
+            </div>
+    
+            <div class="field full">
+              <label for="subject">Subject *</label>
+              <input id="subject" name="subject" maxlength="80" type="text" required
+                placeholder="For example, chiller 3 trips overnight">
+            </div>
+            <div class="field full">
+              <label for="description"><span id="descLabel">What happened? *</span>
+                <span class="hint" id="descHint">Include the unit serial number if you have it.</span></label>
+              <textarea id="description" name="description" rows="5" required></textarea>
+            </div>
+    
+            <div class="full">
+              <button class="btn copper" type="submit">Send service request</button>
+            </div>
+            <p class="note full">Fields marked * are required.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  <!-- FAQ (matches the knowledge articles used by the agent) -->
+  <section class="faq" id="faq">
+    <div class="wrap section-split">
+      <div>
+        <h2>Common questions</h2>
+        <p>Quick answers before you get in touch.</p>
+      </div>
+      <div id="faqList">
+        <details>
+          <summary>How often does a screw compressor need an oil change?</summary>
+          <p>Every 4,000 operating hours or once a year, whichever comes first. Use the oil grade named on the unit nameplate, and depressurise and isolate the unit before draining.</p>
+        </details>
+        <details>
+          <summary>What happens after I raise a service case?</summary>
+          <p>You receive an acknowledgement with your case number. The case is routed to your regional queue, where a dispatcher assigns an engineer.</p>
+        </details>
+        <details>
+          <summary>How do I know whether a visit is chargeable?</summary>
+          <p>It depends on the coverage plan for the unit. We check it before the engineer travels and tell you whether the plan is active, expired or missing.</p>
+        </details>
+        <details>
+          <summary>Can I add details to a case I already raised?</summary>
+          <p>Yes. Reply to the acknowledgement email and your message is added to the same case, so the engineer sees the whole conversation in one place.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service regions: filled from data/site-data.json -->
+  <section class="regions" id="regions" hidden>
+    <div class="wrap section-split">
+      <div>
+        <h2>Where our engineers work</h2>
+        <p id="regionNote">Each region has its own service team.</p>
+      </div>
+      <div class="region-list" id="regionList"></div>
+    </div>
+  </section>
+
+  <!-- Email support: Email-to-Case (INT-01, INT-02) -->
+  <section class="email" id="email">
+    <div class="wrap section-split">
+      <div>
+        <h2>Prefer email?</h2>
+        <p>Write to our support address and your message becomes a case automatically.</p>
+      </div>
+      <div>
+        <a class="mail-link" id="supportMail" href="#">support address</a>
+        <ul class="tips">
+          <li>Attach photos of fault panels or nameplates. They stay on the case.</li>
+          <li>Reply to our acknowledgement email to add to the same case. Please do not start a new message.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Helios Equipment Services is a fictional company created for a Salesforce training project.</p>
+    <p><a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

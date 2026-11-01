@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "company": "Helios Equipment Services",
+    "note": "Fictional company and figures, created for a Salesforce training project."
+  },
+  "products": [
+    {
+      "id": "chillers",
+      "name": "Chillers",
+      "enquiryType": "Chiller",
+      "tagline": "Process and plant cooling for cold stores, food production and manufacturing.",
+      "description": "Air-cooled and water-cooled units, sized to your heat load and installed with the controls your plant already uses.",
+      "image": "images/chiller.svg",
+      "imageAlt": "Illustration of an air-cooled chiller with two fans on top",
+      "specs": [
+        {
+          "label": "Capacity",
+          "value": "20 kW to 2 MW"
+        },
+        {
+          "label": "Cooling medium",
+          "value": "Water or glycol"
+        },
+        {
+          "label": "Heat rejection",
+          "value": "Air or water cooled"
+        },
+        {
+          "label": "Compressors",
+          "value": "Fixed or variable speed"
+        }
+      ]
+    },
+    {
+      "id": "compressors",
+      "name": "Screw compressors",
+      "enquiryType": "Screw compressor",
+      "tagline": "Compressed air for workshops, packaging lines and process plants.",
+      "description": "Oil-injected and oil-free screw compressors, with service intervals tracked from the unit record so nothing is missed.",
+      "image": "images/compressor.svg",
+      "imageAlt": "Illustration of a screw compressor cabinet next to an air receiver tank",
+      "specs": [
+        {
+          "label": "Motor power",
+          "value": "7.5 to 250 kW"
+        },
+        {
+          "label": "Working pressure",
+          "value": "Up to 13 bar"
+        },
+        {
+          "label": "Drive",
+          "value": "Fixed or variable speed"
+        },
+        {
+          "label": "Oil change",
+          "value": "Every 4,000 hours or yearly"
+        }
+      ]
+    },
+    {
+      "id": "dryers",
+      "name": "Air dryers",
+      "enquiryType": "Air dryer",
+      "tagline": "Dry air that protects tools, product and pipework.",
+      "description": "Refrigerant dryers for general use and desiccant dryers where a very low dew point matters, sized to your flow.",
+      "image": "images/dryer.svg",
+      "imageAlt": "Illustration of an air dryer between two filter housings",
+      "specs": [
+        {
+          "label": "Refrigerant dryer",
+          "value": "Dew point +3 °C"
+        },
+        {
+          "label": "Desiccant dryer",
+          "value": "Dew point −40 °C"
+        },
+        {
+          "label": "Flow",
+          "value": "0.5 to 80 m³/min"
+        },
+        {
+          "label": "Filtration",
+          "value": "Matched filters included"
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How often does a screw compressor need an oil change?",
+      "answer": "Every 4,000 operating hours or once a year, whichever comes first. Use the oil grade named on the unit nameplate, and depressurise and isolate the unit before draining."
+    },
+    {
+      "question": "What happens after I raise a service case?",
+      "answer": "You receive an acknowledgement with your case number. The case is routed to your regional queue, where a dispatcher assigns an engineer."
+    },
+    {
+      "question": "How do I know whether a visit is chargeable?",
+      "answer": "It depends on the coverage plan for the unit. We check it before the engineer travels and tell you whether the plan is active, expired or missing."
+    },
+    {
+      "question": "Can I add details to a case I already raised?",
+      "answer": "Yes. Reply to the acknowledgement email and your message is added to the same case, so the engineer sees the whole conversation in one place."
+    }
+  ],
+  "regions": [
+    {
+      "name": "Benelux",
+      "countries": "Netherlands, Belgium, Luxembourg",
+      "team": "Benelux service team"
+    },
+    {
+      "name": "DACH",
+      "countries": "Germany, Austria, Switzerland",
+      "team": "DACH service team"
+    },
+    {
+      "name": "France",
+      "countries": "France",
+      "team": "France service team"
+    }
+  ],
+  "billingNote": "Billing questions from every region go to one shared billing team."
+}

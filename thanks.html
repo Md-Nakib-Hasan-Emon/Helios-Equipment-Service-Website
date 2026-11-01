@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you | Helios Equipment Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Helios<span>.</span> Equipment Services</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#enquiry">Sales enquiry</a>
+      <a href="index.html#service">Service request</a>
+      <a href="index.html#email">Email support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="thanks-main">
+  <div class="wrap">
+    <div class="tick-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32"><path d="M7 17l6 6 12-13"/></svg>
+    </div>
+    <h1 id="title">Thank you.</h1>
+    <p class="lead" id="message">We have received your message.</p>
+    <div class="actions">
+      <a class="btn" href="index.html">Back to the website</a>
+      <a class="btn ghost" id="again" href="index.html#service">Send another request</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Helios Equipment Services is a fictional company created for a Salesforce training project.</p>
+  </div>
+</footer>
+
+<script>
+  // The forms send visitors here with ?from=enquiry or ?from=service
+  (function () {
+    var from = new URLSearchParams(location.search).get("from");
+    var title = document.getElementById("title");
+    var message = document.getElementById("message");
+    var again = document.getElementById("again");
+    if (from === "enquiry") {
+      document.title = "Enquiry received | Helios Equipment Services";
+      title.textContent = "We have your enquiry.";
+      message.textContent = "A confirmation email is on its way. A sales engineer will contact you about your equipment needs.";
+      again.textContent = "Send another enquiry";
+      again.href = "index.html#enquiry";
+    } else if (from === "service") {
+      document.title = "Request received | Helios Equipment Services";
+      title.textContent = "We have your service request.";
+      message.textContent = "You will get an email with your case number. Quote it in any follow-up, or reply to that email to add details.";
+      again.textContent = "Send another request";
+      again.href = "index.html#service";
+    }
+  })();
+</script>
+</body>
+</html>
