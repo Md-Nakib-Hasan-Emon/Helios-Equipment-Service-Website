@@ -199,8 +199,12 @@
       <div class="panel">
         <form class="form" id="leadForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DjV000006QR4H" method="POST">
           <input type="hidden" name="oid" value="00DjV000006QR4H">
-          <!-- retURL is set automatically by site.js on a hosted page. Replace this value only if thanks.html lives elsewhere. -->
-          <input type="hidden" name="retURL" id="leadRet" value="https://REPLACE-ME/thanks.html?from=enquiry">
+          
+<!-- retURL points to the Netlify thanks page; site.js updates it to the current host (e.g. deploy previews) when served over http/https. -->
+<input type="hidden" name="retURL" id="leadRet"
+  value="https://helios-equipment-service.netlify.app/thanks.html?from=enquiry">
+
+
           <input type="hidden" name="lead_source" value="Web">
 
           <div class="field">
@@ -289,8 +293,10 @@
             action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DjV000006QR4H"
             method="POST">
             <input type="hidden" name="orgid" value="00DjV000006QR4H">
-            <!-- retURL is set automatically by site.js on a hosted page -->
-            <input type="hidden" name="retURL" id="caseRet" value="https://REPLACE-ME/thanks.html?from=service">
+    <!-- retURL points to the Netlify thanks page; site.js updates it to the current host when served over http/https -->
+    <input type="hidden" name="retURL" id="caseRet"
+      value="https://helios-equipment-service.netlify.app/thanks.html?from=service">
+    <input type="hidden" name="origin" value="Web">
             <input type="hidden" name="origin" value="Web">
     
             
